@@ -107,3 +107,97 @@ o <- function() {
 o()
 
 rm(n, o)
+
+#################
+j <- function() {
+  if (! exists("a")) {
+    a <- 1
+  } else {
+    a <- a + 1
+  }
+  print(a)
+}
+
+j()
+j()
+a <- 50
+
+j()
+j()
+################
+
+x <- 1
+y <- 2
+fun <- function () {
+  x <- 101
+  y <<- 102
+}
+fun()
+x
+y
+##################
+
+f <- function(abcdef, bcde1, bcde2) {
+  list(a = abcdef, b1 = bcde1, b2 = bcde2)
+}
+
+str(f(1, 2, 3))
+
+###################
+
+f <- function(abcdef, bcde1, bcde2) {
+  list(a = abcdef, b1 = bcde1, b2 = bcde2)
+}
+
+str(f(2, 3, abcdef = 1))
+
+#################
+#empieza con a
+f <- function(abcdef, bcde1, bcde2) {
+  list(a = abcdef, b1 = bcde1, b2 = bcde2)
+}
+
+str(f(2, 3, a = 1))
+#################
+f <- function(abcdef, bcde1, bcde2) {
+  list(a = abcdef, b1 = bcde1, b2 = bcde2)
+}
+
+str(f(1, 3, b = 1))
+#################
+
+suma <- function(a, b) a + b
+
+argumentos <- list(a=15, b=5)
+
+do.call(suma, argumentos)
+#################
+
+g <- function(a = 1, b = a * 2) {
+  c(a, b)
+}
+
+g()
+
+g(10)
+#################
+
+myhist <- function(x, breaks=length(x)) {
+  breaks
+}
+
+myhist(runif(10))
+
+myhist(runif(10), breaks=501)
+###############
+
+'%+%' <- function(a, b) paste(b, a, sep = " ")
+
+"new" %+% "string"
+################
+
+'%+%'('my', 'life')
+
+'%+%'('my', 'life', 'is', 'better')
+##################
+'-'(10, 2)

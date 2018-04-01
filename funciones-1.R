@@ -219,5 +219,7 @@ myhist(runif(10), breaks=501)
 }
 
 3%divisible%2
+25%divisible%5
+
 ##################
 
